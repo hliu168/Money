@@ -8,7 +8,7 @@ TST_DIR= tests
 SRC_FILES = $(addprefix $(SRC_DIR)/, *.c) 
 TST_FILES = $(addprefix $(TST_DIR)/, *.c)
 GCOV = gcovr 
-GCONV_FLAGS = -r . --xml --xml-pretty
+GCONV_FLAGS = -r . --xml
 
 
 all: coverage.xml
