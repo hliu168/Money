@@ -11,7 +11,7 @@ GCOV = gcovr
 GCONV_FLAGS = -r . --xml --xml-pretty
 
 
-all: coverage_report.html
+all: coverage.xml
 
 money.o:  $(SRC_FILES) $(addprefix $(SRC_DIR)/, money.h)
 	$(CC) $(CFLAGS) $(PROFILE_FLAGS) $(SRC_FILES) 
@@ -25,8 +25,8 @@ check_money_tests: money.o check_money.o
 test: check_money_tests
 	./check_money_tests
 
-coverage_report.html: test
-	$(GCOV) $(GCONV_FLAGS) -o coverage_report.html
+coverage.xml: test
+	$(GCOV) $(GCONV_FLAGS) -o coverage.xml
 
 .PHONY: clean all
 
