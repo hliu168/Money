@@ -23,7 +23,7 @@ check_money_tests: money.o check_money.o
 	$(CC) money.o check_money.o $(TST_LIBS) $(COV_LIBS) -o check_money_tests
 
 test: check_money_tests
-	./check_money_tests
+	LD_LIBRARY_PATH=/usr/local/lib ./check_money_tests
 
 coverage.xml: test
 	$(GCOV) $(GCONV_FLAGS) -o coverage.xml
