@@ -1,8 +1,8 @@
 node {
 	checkout scm
 	stage('Build') {
-//		sh 'make all'
-//		sh 'cat tap-report.txt | tap-xunit > junit-report.xml'
+		sh 'make all'
+		sh 'xsltproc check_unittest.xslt check-report.xml > junit-report.html'
 	}
 
 	stage('Report') {

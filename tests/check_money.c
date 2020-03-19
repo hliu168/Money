@@ -34,8 +34,8 @@ int main(void) {
   s = money_suite();
   runner = srunner_create(s);
 
-  srunner_set_xml(runner, "./junit-report.xml");
-  srunner_set_tap(runner, "./tap-report.txt");
+  srunner_set_xml(runner, "./check-report.xml");
+//  srunner_set_tap(runner, "./tap-report.txt");
   srunner_run_all(runner, CK_NORMAL); 
   no_failed = srunner_ntests_failed(runner);
   srunner_free(runner);
