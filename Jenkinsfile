@@ -2,7 +2,9 @@ node {
 	checkout scm
 	stage('Build') {
 		sh 'make all'
-		sh 'xsltproc check_unittest.xslt check-report.xml > junit-report.html'
+		REPORT_CONTENT = sh('xsltproc check_unittest.xslt check-report.xml', returnStdout: true)
+		echo $REPORT_CONTENT
+		echo $REPORT_CONTENT > ./junit-report.html
 	}
 
 	stage('Report') {
