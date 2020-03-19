@@ -5,6 +5,7 @@ node {
 	}
 
 	stage('Report') {
-		cobertura coberturaReportFile: 'coverage*.xml'
+		junit 'junit-report.xml'
+		
 	}
 }
