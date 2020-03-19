@@ -5,6 +5,6 @@ node {
 	}
 
 	stage('Report') {
-		junit 'coverage.xml'
+		junit 'coverage*.xml'
 	}
 }
