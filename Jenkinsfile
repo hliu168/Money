@@ -2,7 +2,7 @@ node {
 	checkout scm
 	stage('Build') {
 		sh 'make all'
-		sh 'xsltproc check_unittest.xslt check-report.xml > junit-report.xml'
+		sh 'xsltproc XML_for_JUnit.xsl check-report.xml > junit-report.xml'
 	}
 
 	stage('Report') {
