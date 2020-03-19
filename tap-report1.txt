@@ -1,0 +1,2 @@
+ok 1 - tests/check_money2.c:Core:test_money_spend: Passed
+1..1
