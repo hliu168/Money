@@ -6,7 +6,7 @@ node {
 	}
 
 	stage('Report') {
-		junit 'junit-report.xml'
+		junit 'junit-report.html'
 //		step([$class: "TapPublisher", testResults: "tap-report*.txt"])		
 	}
 }
