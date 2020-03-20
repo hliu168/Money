@@ -3,7 +3,6 @@ node {
 	stage('Build') {
 		sh 'make all'
 		sh 'xsltproc XML_for_JUnit.xsl check-report.xml > junit-report.xml'
-		sh "sed -i \"s/<testsuites>/<testsuites name=\"fwup.core\">/\" junit-report.xml"
 	}
 
 	stage('Report') {
