@@ -3,7 +3,7 @@ node {
 	stage('Build') {
 		sh 'make all'
 		sh 'xsltproc XML_for_JUnit.xsl check-report.xml > junit-report.xml'
-		sh "sed \"s#<testsuites>#<testsuites name=\"fwup.core\">#\" junit-report.xml"
+		sh "sed \"s#<(testsuites)>#<\1 name='fwup.core'>#\" junit-report.xml"
 	}
 
 	stage('Report') {
