@@ -1,6 +1,6 @@
 node {
 	checkout scm
-	def changeLog = ${GITCHANGELOG}
+	def changeLog = "${GITCHANGELOG}"
 	echo changeLog
 	stage('Build') {
 		sh 'make all'
