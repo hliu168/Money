@@ -33,7 +33,7 @@ node {
  {{/issues}}
 {{/tags}}
   """
-
+	echo changeLog
 	stage('Build') {
 		sh 'make all'
 		sh 'xsltproc XML_for_JUnit.xsl check-report.xml > junit-report.xml'
