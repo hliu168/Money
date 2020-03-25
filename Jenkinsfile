@@ -1,6 +1,6 @@
 node {
 	checkout scm
-	gitChangeLog template: """
+	def changeLog = gitChangelog template: """
 {{#tags}}
 <h2> {{name}} </h2>
  {{#issues}}
