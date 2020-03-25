@@ -1,6 +1,6 @@
 node {
 	checkout scm
-	def changeLog = tm stringWithMacro: "${GITCHANGELOG}"
+	def changeLog = tm('$GITCHANGELOG')
 	echo changeLog
 	stage('Build') {
 		sh 'make all'
